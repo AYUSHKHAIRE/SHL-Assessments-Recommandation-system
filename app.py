@@ -18,7 +18,7 @@ cloud = True  # Set to False for local testing
 
 if cloud:
     GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
-    QDRANT_URL = st.secrets["QDRANT_URL"]
+    QDRANT_URL = st.secrets["QDRANT_HOST_URL"]
     QDRANT_API_KEY = st.secrets["QDRANT_API_KEY"]
 
 TP = TextProcessor()
