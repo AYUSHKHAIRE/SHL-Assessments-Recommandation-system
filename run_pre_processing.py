@@ -20,15 +20,17 @@ EB = GeminiEmbedder(
     qdrant_api_key=QDRANT_API_KEY,
 )
 
-# df = pd.read_csv("data/assessments_details.csv")
+df = pd.read_csv("data/assessments_details.csv")
 
-# job_descriptions = df["desc"].tolist()
-# ass_ids = df["dataset_id"].tolist()
+print(f"Total assessments to process: {len(df)}")
 
-# processed_descs = [" ".join(TP.process_text_for_embedding(desc)) for desc in job_descriptions]
+job_descriptions = df["desc"].tolist()
+ass_ids = df["dataset_id"].tolist()
+
+processed_descs = [" ".join(TP.process_text_for_embedding(desc)) for desc in job_descriptions]
 
 # Embed catalog
-# EB.embed_chunks(processed_descs, ids_list=ass_ids)
+EB.embed_chunks(processed_descs, ids_list=ass_ids)
 
 # ---------------------------
 # Query

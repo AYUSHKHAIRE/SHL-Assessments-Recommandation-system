@@ -8,14 +8,11 @@ ASE = AssessmentScrapperEngine()
 # get possible assasment links
 page_base_type_1_url = "https://www.shl.com/products/product-catalog/?start=12&type=1"
 type_1_max_pages = 32
-page_base_type_2_url = "https://www.shl.com/products/product-catalog/?start=12&type=2"
-type_2_max_pages = 12
 
 major_assessment_listing_pages_links_urls = [
-    f"https://www.shl.com/products/product-catalog/?start={i}&type=1" for i in range(0, type_1_max_pages * 12)
-] + [
-    f"https://www.shl.com/products/product-catalog/?start={i}&type=2" for i in range(0, type_2_max_pages * 12)
+    f"https://www.shl.com/products/product-catalog/?start={i}&type=1" for i in range(0, type_1_max_pages*12 , 12)
 ]
+# print(major_assessment_listing_pages_links_urls)
 print(f"Total major assessment listing pages to scrape: {len(major_assessment_listing_pages_links_urls)}")
 
 def fetch_and_parse(page_url):
@@ -46,10 +43,10 @@ def fetch_assessment_detail(link):
 
 all_assessment_links = []
 
-with ThreadPoolExecutor(max_workers=8) as executor:
+with ThreadPoolExecutor(max_workers=16) as executor:
     futures = [
         executor.submit(fetch_and_parse, url)
-        for url in major_assessment_listing_pages_links_urls[:250]
+        for url in major_assessment_listing_pages_links_urls
     ]
 
     for future in tqdm(as_completed(futures), total=len(futures),
@@ -70,7 +67,7 @@ assessments_detail_dict = {
 }
 
 results = []
-with ThreadPoolExecutor(max_workers=16) as executor:
+with ThreadPoolExecutor(max_workers=6) as executor:
     futures = [
         executor.submit(fetch_assessment_detail, link)
         for link in all_assessment_links
