@@ -17,7 +17,7 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 cloud = True  # Set to False for local testing
 
 if cloud:
-    OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+    GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
     QDRANT_URL = st.secrets["QDRANT_URL"]
     QDRANT_API_KEY = st.secrets["QDRANT_API_KEY"]
 
