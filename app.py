@@ -49,7 +49,7 @@ st.markdown(
 
 query = st.text_area(
     "Enter your job description query:",
-     value="I want to hire a Senior Data Analyst with 5 years of experience and expertise in SQL, Excel and Python. The assessment can be 1-2 hour long",
+     value="I want to hire a Senior java developer with 5 years of experience and expertise in SQL, Excel and Python. The assessment can be 1-2 hour long",
     height=200)
 
 if st.button("Get Recommendations"):
@@ -72,7 +72,7 @@ if st.button("Get Recommendations"):
         progress_bar.progress(40)
         query_embedding = EB.get_user_query_embedding(processed_query)
         progress_bar.progress(60)
-        top_scores, top_texts, top_ids = EB.get_similar_chunks(query_embedding, top_k=30)
+        top_scores, top_texts, top_ids = EB.get_similar_chunks(query_embedding, top_k=10)
         st.subheader("Top Recommendations:")
         progress_bar.progress(80)
         selected_rows = df[df["dataset_id"].isin(top_ids)].copy()
