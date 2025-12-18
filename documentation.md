@@ -339,4 +339,4 @@
   python run_scrapper.py
 ```
 
-![](/assets/scrapper_run.png)
+![](https://github.com/AYUSHKHAIRE/SHL-Assessments-Recommandation-system/blob/main/assets/scrapper_run.png?raw=true)
