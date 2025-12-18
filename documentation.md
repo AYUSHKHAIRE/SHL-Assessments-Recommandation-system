@@ -263,8 +263,6 @@
   - Can be easily wrapped inside a REST API (FastAPI/Flask).
   - Can be directly called from Streamlit for interactive recommendations.
 
-![](/assets/scrapper_run.png)
-
 ### `run_scrapper.py`
 
 - **Purpose**:  
