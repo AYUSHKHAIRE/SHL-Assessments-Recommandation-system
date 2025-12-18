@@ -51,6 +51,13 @@ class RecommendRequest(BaseModel):
 # ---------------------------
 # Endpoint
 # ---------------------------
+
+@app.get("/health")
+def health_check():
+    return {
+        "status": "healthy"
+    }
+
 @app.post("/recommend")
 def recommend(req: RecommendRequest):
     # 1. Refine query using Gemini
