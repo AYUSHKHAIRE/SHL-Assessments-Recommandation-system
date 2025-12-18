@@ -335,8 +335,9 @@
   - Dataset correctness is critical for downstream recommendation quality
 
 - **Typical usage**:
-  ```bash
+
+```bash
   python run_scrapper.py
 ```
 
-![](https://github.com/AYUSHKHAIRE/SHL-Assessments-Recommandation-system/blob/main/assets/scrapper_run.png?raw=true)
+![](/assets/scrapper_run.png)
