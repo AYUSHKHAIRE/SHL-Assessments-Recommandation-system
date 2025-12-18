@@ -106,3 +106,5 @@ def recommend(req: RecommendRequest):
         "query": req.query,
         "recommended_assessments": recommended_assessments
     }
+
+# uvicorn api.main:app --host 0.0.0.0 --port 8000
