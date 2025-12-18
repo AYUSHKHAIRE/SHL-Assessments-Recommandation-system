@@ -431,7 +431,7 @@ Given the limited evaluation data and the semantic nature of the task, this resu
 
 - Streamlit Deployed app : https://shl-assessments-recommandation-system.streamlit.app/
 - Github repository : https://github.com/AYUSHKHAIRE/SHL-Assessments-Recommandation-system/
-- Render app API endpoint : will deploy soon 
+- Render app API endpoint : https://shl-assessments-recommandation-system.onrender.com/docs
 
 ## 9. Remarks
 
