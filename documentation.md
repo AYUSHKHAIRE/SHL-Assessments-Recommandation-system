@@ -341,3 +341,4 @@
   python run_scrapper.py
 ```
 
+![](/assets/scrapper_run.png)
